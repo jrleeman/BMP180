@@ -12,7 +12,7 @@ VAR
 
 OBJ
   PST : "Parallax Serial Terminal"
-  BMP180 : "barometric_module"
+  BMP180 : "BMP180 Spin"
 
 PUB Main 
   Pause_MS(1000) 
