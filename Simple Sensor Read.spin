@@ -1,3 +1,14 @@
+{{                                                                                                                       
+  Simple Sensor Read.spin
+  J.R. Leeman
+  kd5wxb@gmail.com
+
+  A demonstration to read the sensor temperature and pressure in the
+  most simple way.  This is done on the ultra-high-resolution setting
+  to give the best possible data quality.
+                                                                                                                                                       
+                                                                                                                                                            
+}}
 CON
 _clkmode = xtal1 + pll16x                                                      
 _xinfreq = 5_000_000
