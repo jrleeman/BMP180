@@ -8,11 +8,11 @@ resolutions are selected on sensor initialization as documented in the
 code.
 
 ### Sensor Details
-[Sensor Breakout (Sparkfun)](www.sparkfun.com/products/11824)
+[Sensor Breakout (Sparkfun)](http://www.sparkfun.com/products/11824)
 
 [Sensor Datasheet](https://github.com/sparkfun/BMP180_Breakout/blob/master/BMP180%20Datasheet%20V2.5.pdf?raw=true)
 
-[Arudino Github Repo (Sparkfun)](github.com/sparkfun/BMP180_Breakout)
+[Arudino Github Repo (Sparkfun)](http://github.com/sparkfun/BMP180_Breakout)
 
 ### Setup
 1. Connect the power headers of the sensor to ground and 3.3V respectively.
