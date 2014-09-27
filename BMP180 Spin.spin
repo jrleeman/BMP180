@@ -1,5 +1,5 @@
 {{                                                                                                                       
-  BMP180 Pressure Sensor Driver
+  BMP180 Pressure Sensor Object
   J.R. Leeman
   kd5wxb@gmail.com
 
@@ -14,7 +14,8 @@
         oss = 2 : High Resolution - RMS noise 0.04 hPa/0.3 m
         oss = 3 : Ultra High Res. - RMS noise 0.03 hPa/0.25 m
 
-  - Read data with Read function                                                                                                                                                          
+  - Read data with Read function by passing two pointers for the
+    temperature and pressure.                                                                                                                                                         
                                                                                                                                                             
 }}                                                                                                                                                
 CON
@@ -45,7 +46,7 @@ PUB Init(scl,sda,inoss)
   ' Read the Calibration Coefficients from on-board EEPROM
   ReadCals
 
-PUB Read   
+PUB Read(TempPtr,PresPtr)   
   'Uncalibrated Temp Reading
   I2C.write(ALT,$F4,$2E)
   Pause_MS(5)
@@ -82,7 +83,8 @@ PUB Read
   X2 := (-7357 * p) / 65536
   p := p + (X1 + X2 + 3791) / 16
 
-  return(p)
+  Long[TempPtr] := T
+  Long[PresPtr] := p
   
 PUB ReadCals | i
 
