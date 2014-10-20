@@ -23,8 +23,11 @@ code.
 
 ### Files
 * **BMP180 Spin.spin** - Spin object to read the sensor
-* **Sensor Resolution.spin** - Streams readings at each sensor resolution setting to show timing and resolution changes.
-* **Simple Sensor Read.spin** - Simple demonstration of how to read the temperature and pressure.
+* **BMP180.pdf** - Local copy of device datasheet
+* **I2C Spin driver v1.2.spin** - I2C driver local copy
+* **Sensor Resolution.spin** - Streams readings at each sensor resolution setting to show timing and resolution changes
+* **Simple Sensor Read.spin** - Simple demonstration of how to read the temperature and pressure
+* **README.md** - This file
 
 ### Notes
 * This used Chris Gadd's [I2C Routines object](http://obex.parallax.com/object/700) found on the [Parallax Object Exchange](http://obex.parallax.com/)
