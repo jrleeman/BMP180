@@ -33,3 +33,6 @@ code.
 * This used Chris Gadd's [I2C Routines object](http://obex.parallax.com/object/700) found on the [Parallax Object Exchange](http://obex.parallax.com/)
 * Pull-ups are required with this setup, but that can be modified by using the
   push-pull object in the I2C Routines.
+
+### To-Do
+* Add abort handling in case sensor is not found
