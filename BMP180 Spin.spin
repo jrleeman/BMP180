@@ -48,18 +48,18 @@ PUB Init(scl,sda,inoss)
 
 PUB Read(TempPtr,PresPtr)   
   'Uncalibrated Temp Reading
-  I2C.write(ALT,$F4,$2E)
+  \I2C.write(ALT,$F4,$2E)
   Pause_MS(5)
-  UT := (I2C.read(ALT,$F6) << 8) | I2C.read(ALT,$F7)
+  UT := (\I2C.read(ALT,$F6) << 8) | \I2C.read(ALT,$F7)
   X1 := (UT-CalCoefs[5])*CalCoefs[4]/32768
   X2 := CalCoefs[9] * 2048 / (X1 + CalCoefs[10])
   B5 := X1 + X2
   T  := (B5 + 8) / 16
    
   'Uncalibrated Pres Reading
-  I2C.write(ALT,$F4,($34+(oss<<6)))
+  \I2C.write(ALT,$F4,($34+(oss<<6)))
   Pause_MS(ConvTime[oss])
-  UP := ((I2C.read(ALT,$F6) << 16) + (I2C.read(ALT,$F7) << 8) + I2C.read(ALT,$F8) ) >> (8-oss)
+  UP := ((\I2C.read(ALT,$F6) << 16) + (\I2C.read(ALT,$F7) << 8) + \I2C.read(ALT,$F8) ) >> (8-oss)
    
   B6 := B5 - 4000
   X1 := (CalCoefs[7] * (B6 * B6 / 4096)) / 2048
@@ -89,7 +89,7 @@ PUB Read(TempPtr,PresPtr)
 PUB ReadCals | i
 
   repeat i from 0 to 21
-    CoefResponse[i] := I2C.read(ALT,$AA+i)
+    CoefResponse[i] := \I2C.read(ALT,$AA+i)
 
   repeat i from 0 to 10
     CalCoefs[i] := (CoefResponse[2*i] << 8) | CoefResponse[2*i+1]
